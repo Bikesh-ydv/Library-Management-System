@@ -24,12 +24,12 @@ int main()
     int i, j, s, count;
     i = 0;
     j = 0;
-    s = 0;
-    count = 0;
+    s = 0; 
+    count = 0;//Takes count of the number of book registered
 
     FILE *file;
 
-    
+        // Loading existing data from file
     file = fopen("library.rec", "r");
     if (file != NULL)
     {
@@ -57,7 +57,7 @@ int main()
 
         switch (j)
         {
-        case 1:
+        case 1:      //Adding Record of the books
             printf(" \nYou can add the Records of the book ");
             printf(" \nEnter the book name: ");
             getchar(); 
@@ -73,7 +73,7 @@ int main()
             i = i + 1;
             break;
 
-        case 2:
+        case 2:  //Displaying record of the books
             if (count == 0)
             {
                 printf(" \nThere are no books stored!!\n\n ");
@@ -89,7 +89,7 @@ int main()
             }
             break;
 
-        case 3:
+        case 3:            //Searching book
             printf("\nEnter the name of the author of the book:");
             scanf(" %[^\n]s", author_search);
             for (s = 0; s < count; s++)
@@ -109,7 +109,7 @@ int main()
             }
             break;
 
-        case 4:
+        case 4:     //Updating  name of the books
             printf("\nEnter the name of the author of the book which you want to update:");
             scanf(" %[^\n]s", author_search);
             for (s = 0; s < count; s++)
@@ -135,7 +135,7 @@ int main()
             break;
 
         case 5:
-            
+             // Saving data to file before exiting
             file = fopen("library.rec", "w");
             if (file != NULL)
             {
